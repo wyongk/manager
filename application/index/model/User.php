@@ -6,6 +6,11 @@ class User extends Model
 {
     protected $pk='u_id';
 
+    public function role()
+    {
+        return $this->hasOne('Role','r_id')->bind(['r_name'=>'r_name']);
+    }
+
     /*
     *查询一条数据
     *param $field  查询字段
@@ -28,7 +33,14 @@ class User extends Model
      */
     public function selectData($field='',$where='')
     {
-        return $this->field($field)->where($where)->select();
+        $data=$this->withJoin('role','LEFT')->field($field)->where($where)->select();
+        $list=array();
+        foreach ($data as $v)
+        {
+            unset($v['role']);
+            $list[]=$v;
+        }
+        return $list;
     }
     /**
      * @description: 添加用户
