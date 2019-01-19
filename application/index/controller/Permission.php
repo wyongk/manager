@@ -1,18 +1,18 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use app\index\model\User as MUser;
+use app\index\model\Permisssion as MPermisssion;
 use think\Request;
 
-class User extends Controller
+class Permisssion extends Controller
 {
 
-    protected $user;
+    protected $permisssion;
     protected $request;
 
     public function __construct(Request $request)
     {
-        $this->user=new MUser;
+        $this->permisssion=new MPermisssion;
         $this->request=$request;
     }
 
@@ -23,7 +23,7 @@ class User extends Controller
      */
     public function index()
     {
-        $list=$this->user->selectData('','');
+        $list=$this->permisssion->selectData('','');
         $datas=array(
             'status'=>'success',
             'list'=>$list
@@ -41,7 +41,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->addData($data);
+            $flag=$this->permisssion->addData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +62,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->updateData($data);
+            $flag=$this->permisssion->updateData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +83,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->deleteData($data);
+            $flag=$this->permisssion->deleteData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

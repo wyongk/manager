@@ -1,18 +1,18 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use app\index\model\User as MUser;
+use app\index\model\Step as MStep;
 use think\Request;
 
-class User extends Controller
+class Step extends Controller
 {
 
-    protected $user;
+    protected $step;
     protected $request;
 
     public function __construct(Request $request)
     {
-        $this->user=new MUser;
+        $this->step=new MStep;
         $this->request=$request;
     }
 
@@ -23,7 +23,7 @@ class User extends Controller
      */
     public function index()
     {
-        $list=$this->user->selectData('','');
+        $list=$this->step->selectData('','');
         $datas=array(
             'status'=>'success',
             'list'=>$list
@@ -41,7 +41,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->addData($data);
+            $flag=$this->step->addData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +62,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->updateData($data);
+            $flag=$this->step->updateData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +83,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->deleteData($data);
+            $flag=$this->step->deleteData($data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
