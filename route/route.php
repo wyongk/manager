@@ -16,5 +16,10 @@ Route::get('think', function () {
 Route::get('hello/:name', 'index/hello');
 
 return [
-    'login'=>'index/login/index'
+    'login'=>'index/login/index',
+    'loginOut'=>'index/login/loginOut',
+    'user'=>'index/user/index',
+    'userAdd'=>'index/user/add',
+    'userUpdate'=>'index/user/update',
+    'userDelete'=>'index/user/delete'
 ];

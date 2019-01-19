@@ -30,4 +30,43 @@ class User extends Model
     {
         return $this->field($field)->where($where)->select();
     }
+    /**
+     * @description: 添加用户
+     * @param {type array} data
+     * @return: boolean
+     */
+    public function addData($data)
+    {
+        if(empty($data))
+        {
+            return false;
+        }
+        return $this->saveAll($data);
+    }
+    /**
+     * @description: 修改数据 
+     * @param {type array} data
+     * @return: boolean
+     */
+    public function updateData($data)
+    {
+        if(empty($data))
+        {
+            return false;
+        }
+        return $this->saveall($data);
+    }
+    /**
+     * @description: 删除数据 
+     * @param {type array} data
+     * @return: boolean
+     */
+    public function deleteData($data)
+    {
+        if(empty($data))
+        {
+            return false;
+        }
+        return self::destroy($data);
+    }
 }
