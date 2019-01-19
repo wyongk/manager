@@ -33,15 +33,15 @@ class Login extends Controller
             $info=$user->findData('',$where);
             if(!$info)
             {
-                return '用户名错误';
+                return json_encode(array('status'=>2));
             }
             elseif($info['password']===$password)
             {
                 session('username',$username);
-                return '登录成功';
+                return json_encode(array('status'=>1));
             }
             else{
-                return '密码错误';
+                return json_encode(array('status'=>3));
             }
         }
     }
@@ -53,7 +53,7 @@ class Login extends Controller
     public function loginOUt()
     {
         session(null);
-        return '退出成功';
+        return json_encode(array('status'=>'success'));
     }
 
 }

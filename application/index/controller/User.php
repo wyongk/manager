@@ -83,7 +83,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->deleteData($data);
+            $flag=$this->user->deleteData($data[u_id]);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
