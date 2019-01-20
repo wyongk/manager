@@ -45,12 +45,14 @@ class R_permission extends Model
      * @param {type array} data
      * @return: boolean
      */
-    public function deleteData($data)
+    public function deleteData($where)
     {
-        if(empty($data))
+        if(empty($where))
         {
             return false;
         }
-        return self::destroy($data);
+        return self::destroy(function($query){
+            $query->where($where);
+        });
     }
 }

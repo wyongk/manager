@@ -83,7 +83,11 @@ class RPermission extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->permisssion->deleteData($data);
+            $where=array(
+                'r_id'=>$data['r_id'],
+                'p_id'=>$data['p_id']
+            );
+            $flag=$this->permisssion->deleteData($where);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

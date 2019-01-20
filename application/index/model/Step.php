@@ -28,7 +28,7 @@ class Step extends Model
      */
     public function selectData($field='',$where='')
     {
-        return $this->field($field)->where($where)->select();
+        return $this->field($field)->where($where)->order('s_sort','asc')->select();
     }
     /**
      * @description: 添加用户

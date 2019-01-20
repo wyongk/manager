@@ -24,9 +24,14 @@ class Step extends Controller
     public function index()
     {
         $list=$this->step->selectData('','');
+        $recard=array();
+        foreach ($list as $v)
+        {
+            $recard[$v['p_id']][]=$v;
+        }
         $datas=array(
             'status'=>'success',
-            'list'=>$list
+            'list'=>$recard
         );
         return json_encode($datas);
     }

@@ -6,6 +6,43 @@ class In_stock extends Model
 {
     protected $pk='i_id';
 
+    /**
+     * @description: 保存时间时，转换为时间戳
+     * @param {type string} $value 
+     * @return: time
+     */
+    public function setITimespanAttr($value)
+    {
+        return strtotime($value);
+    }
+    /**
+     * @description: 查询时间时，时间戳转化为时间
+     * @param {type int} $value 
+     * @return: string
+     */
+    public function getITimespanAttr($value)
+    {
+        return date('Y-m-d H:i:s',$value);
+    }
+    /**
+     * @description: 保存时间时，转换为时间戳
+     * @param {type string} $value 
+     * @return: time
+     */
+    public function setIOuttimeAttr($value)
+    {
+        return strtotime($value);
+    }
+    /**
+     * @description: 查询时间时，时间戳转化为时间
+     * @param {type int} $value 
+     * @return: string
+     */
+    public function getIOuttimeAttr($value)
+    {
+        return date('Y-m-d H:i:s',$value);
+    }
+
     /*
     *查询一条数据
     *param $field  查询字段
