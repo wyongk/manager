@@ -56,3 +56,5 @@
         返回：<br>
             status:success/failed   成功/失败<br>
     }<br>
+-权限操作接口       
+test
