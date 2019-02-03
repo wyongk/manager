@@ -67,7 +67,7 @@ class Plan extends Controller
             $where=array(
                 'p_id'=>$data['p_id']
             );
-            $flag=$this->plan->updateData($where,$data);
+            $flag=$this->plan->updateDatas($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

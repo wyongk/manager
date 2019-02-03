@@ -67,7 +67,7 @@ class InStock extends Controller
             $where=array(
                 'i_id'=>$data['i_id']
             );
-            $flag=$this->inStock->updateData($where,$data);
+            $flag=$this->inStock->updateDatas($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

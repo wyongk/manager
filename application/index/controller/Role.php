@@ -67,7 +67,7 @@ class User extends Controller
             $where=array(
                 'r_id'=>$data['r_id']
             );
-            $flag=$this->role->updateData($where,$data);
+            $flag=$this->role->updateDatas($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

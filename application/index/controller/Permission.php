@@ -67,7 +67,7 @@ class Permisssion extends Controller
             $where=array(
                 'p_id'=>$data['p_id']
             );
-            $flag=$this->permisssion->updateData($where,$data);
+            $flag=$this->permisssion->updateDatas($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

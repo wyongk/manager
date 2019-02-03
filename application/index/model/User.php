@@ -60,7 +60,7 @@ class User extends Model
      * @param {type array} data
      * @return: boolean
      */
-    public function updateData($where='',$data)
+    public function updateDatas($where='',$data)
     {
         if(empty($data))
         {

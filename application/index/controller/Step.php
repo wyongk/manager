@@ -72,7 +72,7 @@ class Step extends Controller
             $where=array(
                 's_id'=>$data['s_id']
             );
-            $flag=$this->step->updateData($where,$data);
+            $flag=$this->step->updateDatas($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
