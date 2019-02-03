@@ -15,36 +15,55 @@ Route::get('think', function () {
 
 Route::get('hello/:name', 'index/hello');
 
+Route::any('login', 'index/login/index')->allowCrossDomain();
+
+Route::any('loginOut', 'index/login/loginOut')->allowCrossDomain();
+
+Route::any('user', 'index/user/index')->allowCrossDomain();
+
+Route::any('userAdd', 'index/user/add')->allowCrossDomain();
+
+Route::any('userUpdate', 'index/user/update')->allowCrossDomain();
+
+Route::any('userDelete', 'index/user/delete')->allowCrossDomain();
+
+Route::any('step', 'index/step/index')->allowCrossDomain();
+
+Route::any('stepAdd', 'index/step/add')->allowCrossDomain();
+
+Route::any('stepUpdate', 'index/step/update')->allowCrossDomain();
+
+Route::any('stepDelete', 'index/step/delete')->allowCrossDomain();
+
+Route::any('rpermission', 'index/R_permission/index')->allowCrossDomain();
+
+Route::any('rpermissionAdd', 'index/R_permission/add')->allowCrossDomain();
+
+Route::any('rpermissionUpdate', 'index/R_permission/update')->allowCrossDomain();
+
+Route::any('rpermissionDelete', 'index/R_permission/delete')->allowCrossDomain();
+
+Route::any('role', 'index/role/index')->allowCrossDomain();
+Route::any('roleUpdate', 'index/role/update')->allowCrossDomain();
+Route::any('roleDelete', 'index//role/delete')->allowCrossDomain();
+Route::any('roleAdd', 'index/role/add')->allowCrossDomain();
+
+Route::any('plan', 'index/plan/index')->allowCrossDomain();
+Route::any('planAdd', 'index/plan/add')->allowCrossDomain();
+Route::any('planUpdate', 'index/plan/update')->allowCrossDomain();
+Route::any('planDelete', 'index/plan/delete')->allowCrossDomain();
+
+Route::any('Permisssion', 'index/permisssion/index')->allowCrossDomain();
+Route::any('PermisssionAdd', 'index/permisssion/add')->allowCrossDomain();
+Route::any('PermisssionUpdate', 'index/permisssion/update')->allowCrossDomain();
+Route::any('PermisssionDelete', 'index/permisssion/delete')->allowCrossDomain();
+
+Route::any('instock', 'index/in_stock/index')->allowCrossDomain();
+Route::any('instockAdd', 'index/in_stock/add')->allowCrossDomain();
+Route::any('instockUpdate', 'index/in_stock/update')->allowCrossDomain();
+Route::any('instockDelete', 'index/in_stock/delete')->allowCrossDomain();
+
+
 return [
-    'login'=>'index/login/index',
-    'loginOut'=>'index/login/loginOut',
-    'user'=>'index/user/index',
-    'userAdd'=>'index/user/add',
-    'userUpdate'=>'index/user/update',
-    'userDelete'=>'index/user/delete',
-    'step'=>'index/step/index',
-    'stepAdd'=>'index/step/add',
-    'stepUpdate'=>'index/step/update',
-    'stepDelete'=>'index/step/delete',
-    'rpermission'=>'index/R_permission/index',
-    'rpermissionAdd'=>'index/R_permission/add',
-    'rpermissionUpdate'=>'index/R_permission/update',
-    'rpermissionDelete'=>'index/R_permission/delete',
-    'role'=>'index/role/index',
-    'roleAdd'=>'index/role/add',
-    'roleUpdate'=>'index/role/update',
-    'roleDelete'=>'index/role/delete',
-    'plan'=>'index/plan/index',
-    'planAdd'=>'index/plan/add',
-    'planUpdate'=>'index/plan/update',
-    'planDelete'=>'index/plan/delete',
-    'Permisssion'=>'index/permisssion/index',
-    'PermisssionAdd'=>'index/permisssion/add',
-    'PermisssionUpdate'=>'index/permisssion/update',
-    'PermisssionDelete'=>'index/permisssion/delete',
-    'instock'=>'index/in_stock/index',
-    'instockAdd'=>'index/in_stock/add',
-    'instockUpdate'=>'index/in_stock/update',
-    'instockDelete'=>'index/in_stock/delete',
 
 ];
