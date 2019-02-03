@@ -41,7 +41,9 @@ class Permisssion extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->permisssion->addData($data);
+            $datas=array();
+            $datas[]=$data;
+            $flag=$this->permisssion->addData($datas);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +64,10 @@ class Permisssion extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->permisssion->updateData($data);
+            $where=array(
+                'p_id'=>$data['p_id']
+            );
+            $flag=$this->permisssion->updateData($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +88,7 @@ class Permisssion extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->permisssion->deleteData($data);
+            $flag=$this->permisssion->deleteData($data['p_id']);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

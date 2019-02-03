@@ -46,7 +46,9 @@ class Step extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->step->addData($data);
+            $datas=array();
+            $datas[]=$data;
+            $flag=$this->step->addData($datas);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -67,7 +69,10 @@ class Step extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->step->updateData($data);
+            $where=array(
+                's_id'=>$data['s_id']
+            );
+            $flag=$this->step->updateData($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -88,7 +93,7 @@ class Step extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->step->deleteData($data);
+            $flag=$this->step->deleteData($data['s_id']);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

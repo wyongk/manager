@@ -48,13 +48,13 @@ class Plan extends Model
      * @param {type array} data
      * @return: boolean
      */
-    public function updateData($data)
+    public function updateData($where='',$data)
     {
         if(empty($data))
         {
             return false;
         }
-        return $this->saveall($data);
+        return $this->where($where)->update($data);
     }
     /**
      * @description: 删除数据 

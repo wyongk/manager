@@ -169,16 +169,16 @@
 127.0.0.1/managerment/public/stepadd  
 {  
     接收：  
-    p_name:计划名称  
+    s_name:步骤名称  
 }  
 127.0.0.1/managerment/public/stepupdate  
 {  
-    p_id:计划id  
-    p_name:计划名称      
+    s_id:步骤id  
+    s_name:步骤名称      
 }  
 127.0.0.1/managerment/public/stepdelete   
 {  
-    p_id:(数组/一个值)  
+    s_id:(数组/一个值)  
 }  
 - 库存操作接口       
 127.0.0.1/managerment/public/instock     

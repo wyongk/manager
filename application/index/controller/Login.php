@@ -37,7 +37,6 @@ class Login extends Controller
             }
             elseif($info['password']===$password)
             {
-                session('username',$username);
                 return json_encode(array('status'=>1));
             }
             else{

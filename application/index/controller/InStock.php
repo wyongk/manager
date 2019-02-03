@@ -41,7 +41,9 @@ class InStock extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->inStock->addData($data);
+            $datas=array();
+            $datas[]=$data;
+            $flag=$this->inStock->addData($datas);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +64,10 @@ class InStock extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->inStock->updateData($data);
+            $where=array(
+                'i_id'=>$data['i_id']
+            );
+            $flag=$this->inStock->updateData($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +88,7 @@ class InStock extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->inStock->deleteData($data);
+            $flag=$this->inStock->deleteData($data['i_id']);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

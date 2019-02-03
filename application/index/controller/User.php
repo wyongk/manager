@@ -41,7 +41,9 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->addData($data);
+            $datas=array();
+            $datas[]=$data;
+            $flag=$this->user->addData($datas);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +64,10 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->updateData($data);
+            $where=array(
+                'u_id'=>$data['u_id']
+            );
+            $flag=$this->user->updateData($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +88,7 @@ class User extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->user->deleteData($data[u_id]);
+            $flag=$this->user->deleteData($data['u_id']);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));

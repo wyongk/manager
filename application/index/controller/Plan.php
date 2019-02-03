@@ -41,7 +41,9 @@ class Plan extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->plan->addData($data);
+            $datas=array();
+            $datas[]=$data;
+            $flag=$this->plan->addData($datas);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -62,7 +64,10 @@ class Plan extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->plan->updateData($data);
+            $where=array(
+                'p_id'=>$data['p_id']
+            );
+            $flag=$this->plan->updateData($where,$data);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
@@ -83,7 +88,7 @@ class Plan extends Controller
         if($this->request->isPost())
         {
             $data=$this->request->param();
-            $flag=$this->plan->deleteData($data);
+            $flag=$this->plan->deleteData($data['p_id']);
             if($flag)
             {
                 return json_encode(array('status'=>'success'));
