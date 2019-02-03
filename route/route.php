@@ -53,10 +53,10 @@ Route::any('planAdd', 'index/plan/add')->allowCrossDomain();
 Route::any('planUpdate', 'index/plan/update')->allowCrossDomain();
 Route::any('planDelete', 'index/plan/delete')->allowCrossDomain();
 
-Route::any('Permisssion', 'index/permisssion/index')->allowCrossDomain();
-Route::any('PermisssionAdd', 'index/permisssion/add')->allowCrossDomain();
-Route::any('PermisssionUpdate', 'index/permisssion/update')->allowCrossDomain();
-Route::any('PermisssionDelete', 'index/permisssion/delete')->allowCrossDomain();
+Route::any('permission', 'index/permission/index')->allowCrossDomain();
+Route::any('permissionAdd', 'index/permission/add')->allowCrossDomain();
+Route::any('permissionUpdate', 'index/permission/update')->allowCrossDomain();
+Route::any('permissionDelete', 'index/permission/delete')->allowCrossDomain();
 
 Route::any('instock', 'index/in_stock/index')->allowCrossDomain();
 Route::any('instockAdd', 'index/in_stock/add')->allowCrossDomain();

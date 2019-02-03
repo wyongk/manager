@@ -1,10 +1,10 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use app\index\model\Permisssion as MPermisssion;
+use app\index\model\Permission as MPermisssion;
 use think\Request;
 
-class Permisssion extends Controller
+class Permission extends Controller
 {
 
     protected $permisssion;

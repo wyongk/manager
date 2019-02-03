@@ -4,7 +4,7 @@ use think\Controller;
 use app\index\model\Role as MRole;
 use think\Request;
 
-class User extends Controller
+class Role extends Controller
 {
 
     protected $role;
