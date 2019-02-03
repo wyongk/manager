@@ -2,7 +2,7 @@
 ## 接口（所有接口提交类型post）
 #### (所有没有写的返回的接口返回值均为  status:success/failed   成功/失败)
 - 登录/退出接口
-    127.0.0.1/managerment/public/login<br>
+    127.0.0.1/manager/public/login<br>
     {<br>
         接收：<br>
             username: string 用户名<br>
@@ -12,13 +12,13 @@
             status:2   用户名错误<br>
             status:3   密码错误<br>
     }<br>
-    127.0.0.1/managerment/public/loginout<br>
+    127.0.0.1/manager/public/loginout<br>
     {<br>
         返回：<br>
             status:success/failed   成功/失败<br>
     }<br>
 - 用户操作接口
-    127.0.0.1/managerment/public/user<br>
+    127.0.0.1/manager/public/user<br>
     {<br>
         返回：<br>
             status:success/failed   成功/失败<br>
@@ -31,7 +31,7 @@
                 r_name:角色名称<br>
             }<br>
     }<br>
-    127.0.0.1/managerment/public/useradd<br>
+    127.0.0.1/manager/public/useradd<br>
     {<br>
         接收：<br>
             username：用户名<br>
@@ -40,7 +40,7 @@
         返回：<br>
             status:success/failed   成功/失败<br>
     }<br>
-    127.0.0.1/managerment/public/userupdate<br>
+    127.0.0.1/manager/public/userupdate<br>
     {<br>
         接收：<br>
             u_id:用户id<br>
@@ -50,7 +50,7 @@
         返回：<br>
             status:success/failed   成功/失败<br>
     }<br>
-    127.0.0.1/managerment/public/userdelete<br>
+    127.0.0.1/manager/public/userdelete<br>
     {<br>
         接收：<br>
             u_id: 可以是数组，也可以是单个值<br>
@@ -58,7 +58,7 @@
             status:success/failed   成功/失败<br>
     }<br>
 - 权限操作接口       
-127.0.0.1/managerment/public/permission     
+127.0.0.1/manager/public/permission     
 {
     返回：  
     list  
@@ -67,22 +67,22 @@
         p_name:权限名字  
     }  
 }  
-127.0.0.1/managerment/public/permissionadd  
+127.0.0.1/manager/public/permissionadd  
 {  
     接收：  
     p_name:权限名称  
 }  
-127.0.0.1/managerment/public/permissionupdate  
+127.0.0.1/manager/public/permissionupdate  
 {  
     p_id:权限id  
     p_name:权限名称      
 }  
-127.0.0.1/managerment/public/permissiondelete   
+127.0.0.1/manager/public/permissiondelete   
 {  
     p_id:(数组/一个值)  
 }  
 - 角色操作接口       
-127.0.0.1/managerment/public/role     
+127.0.0.1/manager/public/role     
 {
     返回：  
     list  
@@ -91,22 +91,22 @@
         r_name:角色名字  
     }  
 }  
-127.0.0.1/managerment/public/roleadd  
+127.0.0.1/manager/public/roleadd  
 {  
     接收：  
     r_name:角色名称  
 }  
-127.0.0.1/managerment/public/roleupdate  
+127.0.0.1/manager/public/roleupdate  
 {  
     r_id:角色id  
     r_name:角色名称      
 }  
-127.0.0.1/managerment/public/roledelete   
+127.0.0.1/manager/public/roledelete   
 {  
     r_id:(数组/一个值)  
 }  
 - 角色-权限操作接口       
-127.0.0.1/managerment/public/rpermission     
+127.0.0.1/manager/public/rpermission     
 {
     返回：  
     list  
@@ -115,20 +115,20 @@
         p_id:角色名字  
     }  
 }  
-127.0.0.1/managerment/public/rpermissionadd  
+127.0.0.1/manager/public/rpermissionadd  
 {  
     接收：  
     r_id:角色id  
     p_id:权限id    .-
 
 }  
-127.0.0.1/managerment/public/rpermissiondelete   
+127.0.0.1/manager/public/rpermissiondelete   
 {  
     r_id:角色id  
     p_id:权限id    
 }  
 - 计划操作接口       
-127.0.0.1/managerment/public/plan     
+127.0.0.1/manager/public/plan     
 {
     返回：  
     list  
@@ -138,22 +138,22 @@
         p_status:计划进行状态 （0：未完成；1：完成）  
     }  
 }  
-127.0.0.1/managerment/public/planadd  
+127.0.0.1/manager/public/planadd  
 {  
     接收：  
     p_name:计划名称  
 }  
-127.0.0.1/managerment/public/planupdate  
+127.0.0.1/manager/public/planupdate  
 {  
     p_id:计划id  
     p_name:计划名称      
 }  
-127.0.0.1/managerment/public/plandelete   
+127.0.0.1/manager/public/plandelete   
 {  
     p_id:(数组/一个值)  
 }  
 - 步骤操作接口       
-127.0.0.1/managerment/public/step     
+127.0.0.1/manager/public/step     
 {
     返回：  
     record  
@@ -166,22 +166,22 @@
         )  
     }  
 }  
-127.0.0.1/managerment/public/stepadd  
+127.0.0.1/manager/public/stepadd  
 {  
     接收：  
     s_name:步骤名称  
 }  
-127.0.0.1/managerment/public/stepupdate  
+127.0.0.1/manager/public/stepupdate  
 {  
     s_id:步骤id  
     s_name:步骤名称      
 }  
-127.0.0.1/managerment/public/stepdelete   
+127.0.0.1/manager/public/stepdelete   
 {  
     s_id:(数组/一个值)  
 }  
 - 库存操作接口       
-127.0.0.1/managerment/public/instock     
+127.0.0.1/manager/public/instock     
 {
     返回：  
     list  
@@ -194,7 +194,7 @@
         i_outtime:出库时间  
     }  
 }  
-127.0.0.1/managerment/public/instockadd  
+127.0.0.1/manager/public/instockadd  
 {  
     接收：  
         i_name:库存名称  
@@ -203,7 +203,7 @@
         i_timespan:入库时间  
         i_outtime:出库时间  
 }  
-127.0.0.1/managerment/public/instockupdate  
+127.0.0.1/manager/public/instockupdate  
 {  
     i_id:库存id  
     i_name:库存名称（可选）  
@@ -212,7 +212,7 @@
     i_timespan:入库时间（可选）  
     i_outtime:出库时间（可选）       
 }  
-127.0.0.1/managerment/public/instockdelete   
+127.0.0.1/manager/public/instockdelete   
 {  
     i_id:(数组/一个值)  
 }  
