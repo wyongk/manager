@@ -456,7 +456,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
             return false;
         }
 
-        $result = $this->exists ? $this->updateDatas($where) : $this->insertData($sequence);
+        $result = $this->exists ? $this->updateData($where) : $this->insertData($sequence);
 
         if (false === $result) {
             return false;
@@ -542,7 +542,7 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      * @param  mixed   $where 更新条件
      * @return bool
      */
-    protected function updateDatas($where)
+    protected function updateData($where)
     {
         // 自动更新
         $this->autoCompleteData($this->update);
